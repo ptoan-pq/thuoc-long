@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thuộc Lòng</title>
+  <meta name="description" content="Sổ học thuộc lòng cá nhân. Không cần tài khoản, dữ liệu nằm trong trình duyệt.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5d50'/%3E%3Cpath d='M9 8h14M16 8v16' stroke='%23fbf8f1' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap&subset=vietnamese" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">Thuộc Lòng</a>
+    <div class="topbar-actions">
+      <button class="btn ghost" id="btn-export" type="button">Sao lưu</button>
+      <button class="btn ghost" id="btn-import" type="button">Nhập lại</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <dialog id="edit-dialog" aria-labelledby="edit-title">
+    <form id="edit-form" method="dialog">
+      <h2 id="edit-title">Thêm bài</h2>
+      <label>Tên bài
+        <input name="title" required maxlength="160" placeholder="Ví dụ: Kinh Từ Bi, đoạn 1">
+      </label>
+      <label>Nội dung cần thuộc
+        <textarea name="text" required rows="10" placeholder="Dán hoặc gõ nội dung, mỗi câu một dòng càng dễ học."></textarea>
+      </label>
+      <div class="field-row">
+        <label>Thư mục
+          <input name="folder" list="folder-list" maxlength="80" placeholder="Không bắt buộc">
+          <datalist id="folder-list"></datalist>
+        </label>
+        <label>Thẻ, cách nhau bằng dấu phẩy
+          <input name="tags" maxlength="200" placeholder="kinh, tiếng Anh">
+        </label>
+      </div>
+      <p class="form-note" id="edit-note" hidden>Tiến độ ôn tập được giữ nguyên khi sửa nội dung.</p>
+      <div class="dialog-actions">
+        <button class="btn" type="button" id="edit-cancel">Hủy</button>
+        <button class="btn primary" type="submit" id="edit-save">Lưu bài</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <h2 id="confirm-title">Xóa bài này?</h2>
+      <p id="confirm-body"></p>
+      <div class="dialog-actions">
+        <button class="btn" value="cancel">Giữ lại</button>
+        <button class="btn danger" value="ok">Xóa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
