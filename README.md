@@ -6,12 +6,14 @@ Sổ học thuộc lòng cá nhân, chạy hoàn toàn trên trình duyệt. Kh�
 - **Chia đoạn:** bài dài tự chia đoạn, mỗi đoạn và cả bài có tiến độ riêng.
 - **Luyện thêm:** Từng cụm, Xếp thứ tự, và Lời thoại với bài viết theo dạng `TÊN: lời thoại`.
 - **Lịch ôn giãn cách** theo mức nhớ, cùng trang Tiến độ có lịch ôn và danh sách từ hay quên.
+- **Phím Space:** mở lần lượt từng ô hoặc từng cụm, đi tiếp ở Lời thoại. Bấm vào khoảng trắng cũng mở được.
 - **Thư mục, thẻ, tìm kiếm, lọc, sắp xếp.**
 - Dữ liệu lưu trong `localStorage` của trình duyệt đang dùng. Muốn chuyển máy thì bấm **Sao lưu** rồi **Nhập lại**.
 
 ## Phiên bản
 
-- `index.html` là bản đang chạy, giống hệt `index_v03.html`.
+- `index.html` là bản đang chạy, giống hệt `index_v04.html`.
+- `index_v03.html` mở bản chưa có phím Space.
 - `index_v02.html` mở bản có sáu bước và bước Gõ lại.
 - `index_v01.html` mở bản đầu tiên, dùng `app.js`, `logic.js`, `styles.css`.
 
